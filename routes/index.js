@@ -1,16 +1,12 @@
 var express = require('express');
 var router = express.Router();
-
-// 中间件示例 其他router也会调用
-router.use(function timeLog(req, res, next) {
-  console.log('Time: ', Date.now());
-  next();
-});
-
-
+var pachong = require('../pachong/index');
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+  pachong.getYn28(function (data) {
+    //console.log(data);
+    res.render('index', { title: JSON.stringify(data) });
+  }, function (err) {});
 });
 
 module.exports = router;
