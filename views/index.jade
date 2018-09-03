@@ -1,5 +1,14 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  table.hq_tb.mt20
+    tr
+      each item in model.titles
+        th= item
+    each item in data
+      tr
+        td= item.no
+        td= item.val
+        - for (var i = 0; i < 8; i ++)
+            td
+        

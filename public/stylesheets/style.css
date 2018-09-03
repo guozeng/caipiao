@@ -1,8 +1,68 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+	line-height: 1;
 }
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+.c:after {
+  content: "020"; 
+  display: block; 
+  height: 0; 
+  clear: both; 
+  visibility: hidden;  
+}
+.c {
+  zoom: 1; 
+}
+.fl{float: left;}
+.fr{float: right;}
 
-a {
-  color: #00B7FF;
-}
+.cw{color: #fff;}
+.bg1{background:#FF8040;}
+.bg2{background:#FF00FF;}
+.bg3{background:#EA2640;}
+.bg4{background:#663399;}
+.bg5{background:#3333FF;}
+.mt30{margin-top: 30px;}
+.mt20{margin-top: 20px;}
+
+.nav{padding: 20px 0;text-align: center; border-bottom: 1px solid #ccc;}
+.nav a{color: #333; text-decoration: none;width: 33.33%;}
+.hq_tb{width: 100%;}

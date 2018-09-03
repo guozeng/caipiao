@@ -1,31 +1,25 @@
 module.exports = {
     hd50: function ($, successCallback) {
-        var vals = []; // 开奖号码
-        var times = []; // 时间
-        var nos = []; // 期数
-        var zuhenos = []; // 开奖号码组合
+        var ret = [];
         $(".particulars>ul").each(function (idx, element) {
             var $element = $(element);
-            vals.push(parseInt($element.find(".next-bg").text()));
+            var obj = {};
+            obj.val = parseInt($element.find(".next-bg").text()); // 开奖号码
             var temp = $element.find(".one").find("b").text().trim();
-            times.push(temp);
+            obj.time = temp;  // 开奖时间
             temp = $element.find(".one").find("h6").text().trim();
             temp = temp.substring(1);
             temp = parseInt(temp);
-            nos.push(temp);
+            obj.no = temp; // 开奖期数
 
             var z1 = $(element).find('.next').find('b').eq(0).text().trim();
             var z2 = $(element).find('.next').find('b').eq(1).text().trim();
             var z3 = $(element).find('.next').find('b').eq(2).text().trim();
-            zuhenos.push(z1 + z2 + z3);
+            obj.zuheno = z1 + z2 + z3; // 开奖组合
+            obj = fomat(obj);
+            ret.push(obj);
         });
-        var dataOut = {
-            periods: nos,
-            anumbers: vals,
-            atimes: times,
-            azuhes: zuhenos
-        }
-        successCallback(dataOut);
+        successCallback(ret);
     },
     hd200_jnd: function ($, successCallback) {
         hd200core($, successCallback, '.orangeball');
@@ -36,29 +30,55 @@ module.exports = {
 }
 
 function hd200core ($, successCallback, cls) {
-    var vals = []; // 开奖号码
-    var times = []; // 时间
-    var nos = []; // 期数
-    var zuhenos = []; // 开奖号码组合
+    var ret = []; 
     $(".datalist>div").each(function (idx, element) {
         if (idx > 1) {
             var el = $(element);
-            vals.push(parseInt(el.find(cls).text().trim()));
-            times.push(el.find('.am-u-sm-4').text().trim());
-            nos.push(el.find('.am-u-sm-3').text().trim());
+            var obj = {};
+            obj.val = parseInt(el.find(cls).text().trim());// 开奖号码
+            obj.time = el.find('.am-u-sm-4').text().trim();// 时间
+            obj.no = el.find('.am-u-sm-3').text().trim();// 期数
 
             var temp = el.find('.am-u-sm-5').text().trim();
             temp = temp.split('=');
             temp = temp[0];
             temp = temp.replace(/\+/ig, '');
-            zuhenos.push(temp);
+            obj.zuheno = temp;// 开奖号码组合
+            obj = fomat(obj);
+            ret.push(obj);
         }
     });
-    var dataOut = {
-        periods: nos,
-        anumbers: vals,
-        atimes: times,
-        azuhes: zuhenos
+    successCallback(ret);
+}
+
+function fomat (obj) {
+    var val = obj.val;
+    if (val < 14) {
+        obj.name1 = '小';
+        if (val % 2 === 0) {
+            obj.name2 = '双';
+            obj.name3 = '小双';
+        } else {
+            obj.name2 = '单';
+            obj.name3 = '小单';
+        }
+    } else if (val > 13) {
+        obj.name1 = '大';
+        if (val % 2 === 0) {
+            obj.name2 = '双';
+            obj.name3 = '大双';
+        } else {
+            obj.name2 = '单';
+            obj.name3 = '大单';
+        }
     }
-    successCallback(dataOut);
+    if (obj.val < 10) {
+        obj.val = '0' + obj.val;
+    }
+    obj.no = '' + obj.no;
+    var len = obj.no.length;
+    if (len > 7) {
+        obj.no = obj.no.substring(len - 7);
+    }
+    return obj;
 }
