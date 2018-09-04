@@ -1,14 +1,19 @@
 extends layout
 
 block content
-  table.hq_tb.mt20
+  table#t_zoushi.hq_tb.mt20
     tr
       each item in model.titles
         th= item
-    each item in data
-      tr
-        td= item.no
-        td= item.val
-        - for (var i = 0; i < 8; i ++)
+    tr
+      td.no_td 间隔
+      td
+        - for (var i = 0; i < model.titles.length - 2; i ++)
             td
+    each item in data
+      tr(name1=item.name1, name2=item.name2, name3=item.name3)
+        td.no_td= item.no
+        td.cred= item.val
+        - for (var i = 0; i < model.titles.length - 2; i ++)
+            td(name=model.titles[i + 2])
         

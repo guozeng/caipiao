@@ -55,6 +55,7 @@ table {
 .fr{float: right;}
 
 .cw{color: #fff;}
+.cred{color: red;}
 .bg1{background:#FF8040;}
 .bg2{background:#FF00FF;}
 .bg3{background:#EA2640;}
@@ -63,6 +64,10 @@ table {
 .mt30{margin-top: 30px;}
 .mt20{margin-top: 20px;}
 
-.nav{padding: 20px 0;text-align: center; border-bottom: 1px solid #ccc;}
-.nav a{color: #333; text-decoration: none;width: 33.33%;}
+.no_td{font-weight: bold; width: 60px;}
+.nav{text-align: center; border-bottom: 1px solid #ccc;}
+.nav a{color: #333; text-decoration: none;width: 33.33%;padding: 20px 0; border-bottom: 2px solid transparent;}
+.nav_hover{border-bottom: 2px solid blue !important; color: #3333FF !important;}
 .hq_tb{width: 100%;}
+.hq_tb td{text-align: center; border: 2px solid #fff; padding: 5px 0; font-size: 12px;}
+.hq_tb th{padding: 5px 0;}

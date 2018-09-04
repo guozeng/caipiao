@@ -2,12 +2,14 @@ doctype html
 html
   head
     meta(charset='UTF-8')
-    title 行情
+    title 时时彩行情
     meta(name='viewport', content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0')
     link(rel='stylesheet', href='/stylesheets/style.css')
   body
-    div.nav.c
-      a.fl(href='#') 加拿大28
-      a.fl(href='#') PC蛋蛋
-      a.fl(href='#') 印尼28
+    div#nav.nav.c
+      a.fl(href='/') 加拿大28
+      a.fl(href='/pcdd') PC蛋蛋
+      a.fl(href='/yn28') 印尼28
     block content
+    script(src='https://cdn.bootcss.com/jquery/3.3.1/jquery.js')
+    script(src='/javascripts/zoushi.js')
