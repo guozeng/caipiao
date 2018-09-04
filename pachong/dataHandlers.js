@@ -82,3 +82,4 @@ function fomat (obj) {
     }
     return obj;
 }
+

@@ -8,8 +8,8 @@ block content
     tr
       td.no_td 间隔
       td
-        - for (var i = 0; i < model.titles.length - 2; i ++)
-            td
+        - for (var i = 0; i < jgarr.length; i ++)
+            td.cblue.fw= jgarr[i]
     each item in data
       tr(name1=item.name1, name2=item.name2, name3=item.name3)
         td.no_td= item.no
