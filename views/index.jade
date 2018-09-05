@@ -16,4 +16,11 @@ block content
         td.cred= item.val
         - for (var i = 0; i < model.titles.length - 2; i ++)
             td(name=model.titles[i + 2])
-        
+  div.other
+    table
+      tr
+        each item in model.otherItems
+          td= item
+      tr
+        each item in otherItems
+          td.cblue.fw= item

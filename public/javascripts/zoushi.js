@@ -49,4 +49,12 @@
     } else {
         nav.find('a').eq(0).addClass('nav_hover');
     }
+
+    $(window).scroll(function () {
+        if ($(this).scrollTop() > 50) {
+            $('.other').hide();
+        } else {
+            $('.other').show();
+        }
+    });
 })();

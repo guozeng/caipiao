@@ -73,3 +73,7 @@ table {
 .hq_tb{width: 100%;}
 .hq_tb td{text-align: center; border: 2px solid #fff; padding: 5px 0; font-size: 12px;}
 .hq_tb th{padding: 5px 0;}
+
+.other{position: fixed; height: 50px; background: #fff; bottom: 0; left: 0; width: 100%; border-top: 1px solid #ccc;}
+.other table{width: 100%;}
+.other td{font-size: 12px; text-align: center; padding-top: 10px;}
