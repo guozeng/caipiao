@@ -7,12 +7,12 @@ var computeOther = require('../utils/computeOther');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  pachong.getJnd28(function (data) {
+  pachong.getJnd28_2(function (data) {
     res.render('index', { model: hq_model, data: data, jgarr: computeJg(data), otherItems: computeOther(data) });
   }, function (err) {});
 });
 router.get('/pcdd', function(req, res, next) {
-  pachong.getPcdd(function (data) {
+  pachong.getPcdd_2(function (data) {
     res.render('index', { model: hq_model, data: data, jgarr: computeJg(data), otherItems: computeOther(data) });
   }, function (err) {});
 });

@@ -6,7 +6,7 @@ function computeOther (dataArr) {
     var ls = [1, 4, 7, 10, 16, 19, 22, 25];
     var lans = [2, 5, 8, 11, 17, 20, 23, 26];
     for (i = 0; i < len; i ++) {
-        var temp = dataArr[i].val;
+        var temp = parseInt(dataArr[i].val);
         if (temp > 21) {
             break;
         } else {
@@ -14,7 +14,7 @@ function computeOther (dataArr) {
         }
     }
     for (i = 0; i < len; i ++) {
-        var temp = dataArr[i].val;
+        var temp = parseInt(dataArr[i].val);
         if (temp < 6) {
             break;
         } else {
@@ -22,7 +22,7 @@ function computeOther (dataArr) {
         }
     }
     for (i = 0; i < len; i ++) {
-        var temp = dataArr[i].val;
+        var temp = parseInt(dataArr[i].val);
         if (inArray(temp, hs)) {
             break;
         } else {
@@ -30,7 +30,7 @@ function computeOther (dataArr) {
         }
     }
     for (i = 0; i < len; i ++) {
-        var temp = dataArr[i].val;
+        var temp = parseInt(dataArr[i].val);
         if (inArray(temp, ls)) {
             break;
         } else {
@@ -38,7 +38,7 @@ function computeOther (dataArr) {
         }
     }
     for (i = 0; i < len; i ++) {
-        var temp = dataArr[i].val;
+        var temp = parseInt(dataArr[i].val);
         if (inArray(temp, lans)) {
             break;
         } else {
@@ -46,7 +46,7 @@ function computeOther (dataArr) {
         }
     }
     for (i = 0; i < len; i ++) {
-        var temp = dataArr[i].val;
+        var temp = parseInt(dataArr[i].val);
         if (temp === 13) {
             break;
         } else {
@@ -54,7 +54,7 @@ function computeOther (dataArr) {
         }
     }
     for (i = 0; i < len; i ++) {
-        var temp = dataArr[i].val;
+        var temp = parseInt(dataArr[i].val);
         if (temp === 14) {
             break;
         } else {
@@ -62,7 +62,7 @@ function computeOther (dataArr) {
         }
     }
     for (i = 0; i < len; i ++) {
-        var temp = dataArr[i].val;
+        var temp = parseInt(dataArr[i].val);
         if (temp === 12) {
             break;
         } else {
@@ -70,7 +70,7 @@ function computeOther (dataArr) {
         }
     }
     for (i = 0; i < len; i ++) {
-        var temp = dataArr[i].val;
+        var temp = parseInt(dataArr[i].val);
         if (temp === 15) {
             break;
         } else {
